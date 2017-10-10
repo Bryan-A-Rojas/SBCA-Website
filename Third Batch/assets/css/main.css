@@ -163,7 +163,7 @@
 	h1, h2, h3, h4, h5, h6 {
 		font-weight: 300;
 		line-height: 1.5;
-		margin: 0 0 1em 0;
+		margin: 0 0 0 0;
 	}
 
 		h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
@@ -1030,7 +1030,7 @@
 			}
 
 		#preview .content {
-			padding: 3em 2em;
+			padding: 4em 0em;
 		}
 
 			#preview .content header h2 {
@@ -1453,7 +1453,7 @@
 				width: 50%;
 				text-align: left;
 				color: rgba(255, 255, 255, 0.75);
-				padding: 2em;
+				padding: 0em;
 				display: inline-block;
 			}
 
