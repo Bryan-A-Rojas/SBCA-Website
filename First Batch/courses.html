@@ -11,6 +11,140 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="assets/css/main.css" />
+    
+      <style>
+        .row>.column {
+            padding: 0 8px;
+        }
+
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        .column {
+            float: left;
+            width: 25%;
+        }
+
+        /* The Modal (background) */
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            padding-top: 100px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: black;
+            z-index: 99;
+        }
+
+        /* Modal Content */
+
+        .modal-content {
+            position: relative;
+            background-color: transparent;
+            margin: auto;
+            padding: 0;
+            width: 90%;
+            max-width: 1200px;
+            align-content: center;
+        }
+
+        /* The Close Button */
+
+        .close {
+            color: white;
+            position: absolute;
+            top: 40px;
+            right: 25px;
+            font-size: 35px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #999;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .mySlides {
+            display: none;
+        }
+
+        /* Next & previous buttons */
+
+        .prev,
+        .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -50px;
+            color: white;
+            font-weight: bold;
+            font-size: 20px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+            -webkit-user-select: none;
+        }
+
+        /* Position the "next button" to the right */
+
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+        /* On hover, add a black background color with a little bit see-through */
+
+        .prev:hover,
+        .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        /* Number text (1/3 etc) */
+
+        .numbertext {
+            color: #f2f2f2;
+            font-size: 12px;
+            padding: 8px 12px;
+            position: absolute;
+            top: 0;
+        }
+
+        .caption-container {
+            text-align: center;
+            background-color: black;
+            padding: 2px 16px;
+            color: white;
+        }
+
+        img.demo {
+            opacity: 0.6;
+        }
+
+        .active,
+        .demo:hover {
+            opacity: 1;
+        }
+
+        img.hover-shadow {
+            transition: 0.3s
+        }
+
+        .hover-shadow:hover {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+        }
+    </style>
 </head>
 
 <body class="subpage">
@@ -25,14 +159,14 @@
     <nav id="menu">
         <ul class="links">
             <li><a href="../First%20Batch/index.html">Home</a></li>
-            <li><a href="../First%20Batch/courses.html">Courses Offered</a></li>
+            <li><a href="../First%20Batch/courses.html" style="background-color:rgb(100,0,0);">Courses Offered</a></li>
             <li><a href="../First%20Batch/history.html">History</a></li>
             <li><a href="../Second%20Batch/events.html">Events 1 </a> <a href="../Second%20Batch/events2.html">Events 2</a></li>
             <li><a href="../Third%20Batch/pictures.html">Pictures</a></li>
             <li><a href="../Second%20Batch/requirements.html">Requirements</a></li>
             <li><a href="../Second%20Batch/blog.html">Other Links</a></li>
             <li><a href="../First%20Batch/careers.html">Careers</a></li>
-            <li><a href="../Third%20Batch/detail1.html">Map</a></li>
+            <li><a href="../First%20Batch/Map.html">Map</a></li>
             <li><a href="../First%20Batch/soon.html">Coming Soon</a></li>
         </ul>
     </nav>
@@ -55,16 +189,16 @@
             <div class="6u 12u$(medium)">
 
                 <h3><span style="text-decoration: underline;">Bachelor of Science in Information Technology</span></h3>
-                <p><span class="image left"><img src="images/pic02.jpg" alt="" /></span> is the application of computers to store, study, retrieve, transmit, and manipulate data, or information, often in the context of a business or other enterprise. IT is considered a subset of information and communications technology (ICT). In 2012, Zuppo proposed an ICT hierarchy where each hierarchy level "contains some degree of commonality in that they are related to technologies that facilitate the transfer of information and various types of electronically mediated communications.</p>
+                <p><span class="image left"><img src="images/pic02.jpg" onclick="openModal();currentSlide(1)" class="hover-shadow" /></span> is the application of computers to store, study, retrieve, transmit, and manipulate data, or information, often in the context of a business or other enterprise. IT is considered a subset of information and communications technology (ICT). In 2012, Zuppo proposed an ICT hierarchy where each hierarchy level "contains some degree of commonality in that they are related to technologies that facilitate the transfer of information and various types of electronically mediated communications.</p>
                 <hr />
 
                 <h3><span style="text-decoration: underline;">Bachelor of Science in Elementary Education and Bachelor in Secondary Education</span></h3>
-                <p><span class="image left"><img src="images/educ.jpg" alt="" /></span> is a four year degree program designed to prepare students to become primary school teachers. The program combines both theory and practice in order to teach students the necessary knowledge and skills a primary school teacher needs. There are several major fields of concentration in the BEED program, namely Early Childhood Education, Special Education, General Education, English, Mathematics, Science, Filipino, Social Studies Music, Arts and Physical Education (MAPE) and Technology and Home Economics (THE).
+                <p><span class="image left"><img src="images/educ.jpg" onclick="openModal3();currentSlide3(1)" class="hover-shadow"/></span> is a four year degree program designed to prepare students to become primary school teachers. The program combines both theory and practice in order to teach students the necessary knowledge and skills a primary school teacher needs. There are several major fields of concentration in the BEED program, namely Early Childhood Education, Special Education, General Education, English, Mathematics, Science, Filipino, Social Studies Music, Arts and Physical Education (MAPE) and Technology and Home Economics (THE).
                 </p>
                 <hr />
 
                 <h3><span style="text-decoration: underline;">Bachelor of Arts in Communication and Media Studies</span></h3>
-                <p><span class="image left"><img src="images/cms1.jpg" alt="" /></span> is a four-year collegiate program intended for individuals who wish to pursue a career in the fields of media, advertising, public relations and similar industries. The course integrates the mastery of radio, television, print media, as well as other media through which information is transmitted.</p>
+                <p><span class="image left"><img src="images/cms1.jpg" onclick="openModal5();currentSlide5(1)" class="hover-shadow" /></span> is a four-year collegiate program intended for individuals who wish to pursue a career in the fields of media, advertising, public relations and similar industries. The course integrates the mastery of radio, television, print media, as well as other media through which information is transmitted.</p>
                 <hr />
 
             </div>
@@ -74,21 +208,123 @@
 
 
                 <h3><span style="text-decoration: underline;">Bachelor of Science in Accountancy</span></h3>
-                <p><span class="image left"><img src="images/account.jpg" alt="" /></span> is the measurement, processing, and communication of financial information about economic entities such as businesses and corporations. The modern field was established by the Italian mathematician Luca Pacioli in 1494. Accounting, which has been called the "language of business", measures the results of an organization's economic activities and conveys this information to a variety of users, including investors, creditors, management, and regulators. Practitioners of accounting are known as accountants. The terms "accounting" and "financial reporting" are often used as synonyms.</p>
+                <p><span class="image left"><img src="images/account.jpg"  onclick="openModal2();currentSlide2(1)" class="hover-shadow"  /></span> is the measurement, processing, and communication of financial information about economic entities such as businesses and corporations. The modern field was established by the Italian mathematician Luca Pacioli in 1494. Accounting, which has been called the "language of business", measures the results of an organization's economic activities and conveys this information to a variety of users, including investors, creditors, management, and regulators. Practitioners of accounting are known as accountants. The terms "accounting" and "financial reporting" are often used as synonyms.</p>
                 <hr />
 
                 <h3><span style="text-decoration: underline;">Bachelor of Science in Business Administration</span></h3>
-                <p><span class="image left"><img src="images/marketing1.png" alt="" /></span> is designed to produce graduates that possess a familiarity of business operations and equip them with critical decision making skills for strategic and executive work necessary for competing in the ever-changing world of global business. The program empowers students with a basic and clear understanding of the functions of every division in a company, be it in marketing, finance, operations, human resources, and office management. Training in this program emphasizes leadership skills, and thus prepares them you managerial and supervisory positions.</p>
+                <p><span class="image left"><img src="images/marketing1.png" onclick="openModal4();currentSlide4(1)" class="hover-shadow" /></span> is designed to produce graduates that possess a familiarity of business operations and equip them with critical decision making skills for strategic and executive work necessary for competing in the ever-changing world of global business. The program empowers students with a basic and clear understanding of the functions of every division in a company, be it in marketing, finance, operations, human resources, and office management. Training in this program emphasizes leadership skills, and thus prepares them you managerial and supervisory positions.</p>
                 <hr />
 
                 <h3><span style="text-decoration: underline;">Bachelor of Science in Legal Management</span></h3>
-                <p><span class="image left"><img src="images/law.jpg" alt="" /></span> is a four year degree program that aims to provide basic knowledge in proper legislative proceedings, as well as an overview of the Philippine Justice System. The BSLM program includes topics in the laws of business, obligations and contracts, taxation, labor laws, and negotiable instruments. It also aims to teach students the essentials of both Public and Business Management.</p>
+                <p><span class="image left"><img src="images/law.jpg" onclick="openModal6();currentSlide6(1)" class="hover-shadow" /></span> is a four year degree program that aims to provide basic knowledge in proper legislative proceedings, as well as an overview of the Philippine Justice System. The BSLM program includes topics in the laws of business, obligations and contracts, taxation, labor laws, and negotiable instruments. It also aims to teach students the essentials of both Public and Business Management.</p>
                 <hr />
 
             </div>
         </div>
 
     </div>
+
+
+
+    <div id="myModal" class="modal">
+        <span class="close cursor" onclick="closeModal()">&times;</span>
+        <div class="modal-content">
+
+            <div class="mySlides">
+                <div class="numbertext">1 / 4</div>
+                <img src="images/pic02.jpg" style="width:60%;margin-left: 20%;">
+            </div>
+            
+            <div class="mySlides">
+                <div class="numbertext">2 / 4</div>
+                <img src="images/pic02.jpg" style="width:60%;margin-left: 20%;">
+            </div>
+            
+             <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+       
+
+        </div>
+    </div>
+    
+     <div id="myModal2" class="modal">
+        <span class="close cursor" onclick="closeModal2()">&times;</span>
+        <div class="modal-content">
+
+            <div class="mySlides2">
+                <div class="numbertext">1 / 4</div>
+                <img src="images/account.jpg" style="width:60%;margin-left: 20%;">
+            </div>
+            
+            <div class="mySlides2">
+                <div class="numbertext">2 / 4</div>
+                <img src="images/account.jpg" style="width:60%;margin-left: 20%;">
+            </div>
+            
+             <a class="prev" onclick="plusSlides2(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides2(1)">&#10095;</a>
+       
+
+        </div>
+    </div>
+    
+    <div id="myModal3" class="modal">
+        <span class="close cursor" onclick="closeModal3()">&times;</span>
+        <div class="modal-content">
+
+            <div class="mySlides3">
+                <div class="numbertext">1 / 4</div>
+                <img src="images/educ.jpg" style="width:60%;margin-left: 20%;">
+            </div>
+            
+             <a class="prev" onclick="plusSlides3(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides3(1)">&#10095;</a>
+        </div>
+    </div>
+    
+    <div id="myModal4" class="modal">
+        <span class="close cursor" onclick="closeModal4()">&times;</span>
+        <div class="modal-content">
+
+            <div class="mySlides4">
+                <div class="numbertext">1 / 4</div>
+                <img src="images/marketing1.png" style="width:60%;margin-left: 20%;">
+            </div>
+            
+             <a class="prev" onclick="plusSlides4(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides4(1)">&#10095;</a>
+        </div>
+    </div>
+    
+    <div id="myModal5" class="modal">
+        <span class="close cursor" onclick="closeModal5()">&times;</span>
+        <div class="modal-content">
+
+            <div class="mySlides5">
+                <div class="numbertext">1 / 4</div>
+                <img src="images/cms1.jpg" style="width:60%;margin-left: 20%;">
+            </div>
+            
+             <a class="prev" onclick="plusSlides5(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides5(1)">&#10095;</a>
+        </div>
+    </div>
+    
+    <div id="myModal6" class="modal">
+        <span class="close cursor" onclick="closeModal6()">&times;</span>
+        <div class="modal-content">
+
+            <div class="mySlides6">
+                <div class="numbertext">1 / 4</div>
+                <img src="images/law.jpg" style="width:60%;margin-left: 20%;">
+            </div>
+            
+             <a class="prev" onclick="plusSlides6(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides6(1)">&#10095;</a>
+        </div>
+    </div>
+    
+    
 
     <!-- Footer -->
     <footer id="footer">
@@ -102,6 +338,229 @@
             &copy; Bryan Rojas & Aidan Crispo. All rights reserved.
         </div>
     </footer>
+
+
+    <script>
+        function openModal() {
+            document.getElementById('myModal').style.display = "block";
+        }
+        function closeModal() {
+            document.getElementById('myModal').style.display = "none";
+        }
+        
+        function openModal2() {
+            document.getElementById('myModal2').style.display = "block";
+        }
+        function closeModal2() {
+            document.getElementById('myModal2').style.display = "none";
+        }
+        
+        function openModal3() {
+            document.getElementById('myModal3').style.display = "block";
+        }
+        function closeModal3() {
+            document.getElementById('myModal3').style.display = "none";
+        }
+        
+        function openModal4() {
+            document.getElementById('myModal4').style.display = "block";
+        }
+        function closeModal4() {
+            document.getElementById('myModal4').style.display = "none";
+        }
+        
+        function openModal5() {
+            document.getElementById('myModal5').style.display = "block";
+        }
+        function closeModal5() {
+            document.getElementById('myModal5').style.display = "none";
+        }
+        
+        function openModal6() {
+            document.getElementById('myModal6').style.display = "block";
+        }
+        function closeModal6() {
+            document.getElementById('myModal6').style.display = "none";
+        }
+        
+        var slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+        
+        function currentSlide2(n) {
+            showSlides2(slideIndex = n);
+        }
+        function plusSlides2(n) {
+            showSlides2(slideIndex += n);
+        }
+        
+        function currentSlide3(n) {
+            showSlides3(slideIndex = n);
+        }
+        function plusSlides3(n) {
+            showSlides3(slideIndex += n);
+        }
+        
+        function currentSlide4(n) {
+            showSlides4(slideIndex = n);
+        }
+        function plusSlides4(n) {
+            showSlides4(slideIndex += n);
+        }
+        
+        function currentSlide5(n) {
+            showSlides5(slideIndex = n);
+        }
+        function plusSlides5(n) {
+            showSlides5(slideIndex += n);
+        }
+        
+        function currentSlide6(n) {
+            showSlides6(slideIndex = n);
+        }
+        function plusSlides6(n) {
+            showSlides6(slideIndex += n);
+        }
+
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("demo");
+            var captionText = document.getElementById("caption");
+            if (n > slides.length) {
+                slideIndex = 1
+            }
+            if (n < 1) {
+                slideIndex = slides.length
+            }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+            captionText.innerHTML = dots[slideIndex - 1].alt;
+        }
+        
+        function showSlides2(n) {
+            var i;
+            var slides = document.getElementsByClassName("mySlides2");
+            var dots = document.getElementsByClassName("demo");
+            var captionText = document.getElementById("caption");
+            if (n > slides.length) {
+                slideIndex = 1
+            }
+            if (n < 1) {
+                slideIndex = slides.length
+            }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+            captionText.innerHTML = dots[slideIndex - 1].alt;
+        }
+        
+        function showSlides3(n) {
+            var i;
+            var slides = document.getElementsByClassName("mySlides3");
+            var dots = document.getElementsByClassName("demo");
+            var captionText = document.getElementById("caption");
+            if (n > slides.length) {
+                slideIndex = 1
+            }
+            if (n < 1) {
+                slideIndex = slides.length
+            }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+            captionText.innerHTML = dots[slideIndex - 1].alt;
+        }
+        
+        function showSlides4(n) {
+            var i;
+            var slides = document.getElementsByClassName("mySlides4");
+            var dots = document.getElementsByClassName("demo");
+            var captionText = document.getElementById("caption");
+            if (n > slides.length) {
+                slideIndex = 1
+            }
+            if (n < 1) {
+                slideIndex = slides.length
+            }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+            captionText.innerHTML = dots[slideIndex - 1].alt;
+        }
+        
+        function showSlides5(n) {
+            var i;
+            var slides = document.getElementsByClassName("mySlides5");
+            var dots = document.getElementsByClassName("demo");
+            var captionText = document.getElementById("caption");
+            if (n > slides.length) {
+                slideIndex = 1
+            }
+            if (n < 1) {
+                slideIndex = slides.length
+            }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+            captionText.innerHTML = dots[slideIndex - 1].alt;
+        }
+        
+        function showSlides6(n) {
+            var i;
+            var slides = document.getElementsByClassName("mySlides6");
+            var dots = document.getElementsByClassName("demo");
+            var captionText = document.getElementById("caption");
+            if (n > slides.length) {
+                slideIndex = 1
+            }
+            if (n < 1) {
+                slideIndex = slides.length
+            }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+            captionText.innerHTML = dots[slideIndex - 1].alt;
+        }
+    </script>
 
     <!-- Scripts -->
     <script src="assets/js/jquery.min.js"></script>
